@@ -1,0 +1,179 @@
+import { charts, tables, timelineMilestones } from "@/data/charts"
+import { members } from "@/data/members"
+import { slides } from "@/data/slides"
+import type { DeckSlide } from "@/data/types"
+import { SlideShell } from "@/components/layout/SlideShell"
+import { ChartCard } from "@/components/visual/ChartCard"
+import { ClassQuestion } from "@/components/visual/ClassQuestion"
+import { ClosingScene } from "@/components/visual/ClosingScene"
+import { ComparisonMatrix } from "@/components/visual/ComparisonMatrix"
+import { CoverScene } from "@/components/visual/CoverScene"
+import { DashboardKpi } from "@/components/visual/DashboardKpi"
+import { DecisionMap } from "@/components/visual/DecisionMap"
+import { OrgBlueprint } from "@/components/visual/OrgBlueprint"
+import { ProcessFlow } from "@/components/visual/ProcessFlow"
+import { RiskMatrix } from "@/components/visual/RiskMatrix"
+import { Roadmap } from "@/components/visual/Roadmap"
+import { TeamGrid } from "@/components/visual/TeamGrid"
+
+interface SlideSceneProps {
+  slide: DeckSlide
+}
+
+function chartData(key?: string) {
+  if (!key) {
+    return []
+  }
+
+  return (charts[key as keyof typeof charts] ?? []) as Record<string, string | number>[]
+}
+
+function tableKey(key?: string) {
+  return key as keyof typeof tables | undefined
+}
+
+function BulletStack({ slide }: SlideSceneProps) {
+  return (
+    <div className="flex flex-col gap-5">
+      {slide.bullets.map((bullet) => (
+        <div
+          key={bullet}
+          className="flex items-start gap-4 border-b border-[var(--deck-border)] pb-4 last:border-b-0"
+        >
+          <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-[var(--deck-primary)]" />
+          <p className="text-[26px] text-[var(--deck-text)]">{bullet}</p>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+function Stage({ slide }: SlideSceneProps) {
+  if (slide.visualType === "members") {
+    return <TeamGrid />
+  }
+
+  if (slide.visualType === "roadmap") {
+    return <Roadmap />
+  }
+
+  if (slide.visualType === "comparison") {
+    return <ComparisonMatrix items={slide.visualItems} tableKey={tableKey(slide.tableKey)} />
+  }
+
+  if (slide.visualType === "decision") {
+    return <DecisionMap items={slide.visualItems ?? []} />
+  }
+
+  if (slide.visualType === "chart" || slide.visualType === "funnel") {
+    return (
+      <ChartCard
+        title={slide.visualTitle ?? slide.title}
+        kind={slide.chartKind ?? "bar"}
+        data={chartData(slide.chartKey)}
+      />
+    )
+  }
+
+  if (slide.visualType === "resource") {
+    return (
+      <div className="grid h-full grid-cols-[0.92fr_1.08fr] gap-6">
+        <ChartCard title="Tỷ trọng nguồn lực" kind="pie" data={chartData(slide.chartKey)} />
+        <ComparisonMatrix tableKey={tableKey(slide.tableKey)} />
+      </div>
+    )
+  }
+
+  if (slide.visualType === "riskMatrix") {
+    return <RiskMatrix />
+  }
+
+  if (slide.visualType === "dashboard") {
+    return <DashboardKpi />
+  }
+
+  if (slide.visualType === "org") {
+    return <OrgBlueprint items={slide.visualItems ?? []} />
+  }
+
+  if (slide.visualType === "timeline") {
+    return (
+      <div className="grid h-full grid-cols-3 gap-6">
+        {timelineMilestones.map((item) => (
+          <article
+            key={item.day}
+            className="fragment flex flex-col justify-between border border-[var(--deck-border)] bg-[var(--deck-surface)] p-7 shadow-[var(--deck-shadow)]"
+          >
+            <span className="text-[54px] font-black leading-none text-[var(--deck-primary)]">
+              {item.day}
+            </span>
+            <div>
+              <h3>{item.label}</h3>
+              <p className="mt-3 text-[20px]">{item.detail}</p>
+            </div>
+          </article>
+        ))}
+      </div>
+    )
+  }
+
+  if (slide.visualType === "milestone") {
+    return <ComparisonMatrix items={slide.visualItems} tableKey={undefined} />
+  }
+
+  if (slide.visualType === "interaction" || slide.visualType === "qa") {
+    return <ClassQuestion slide={slide} />
+  }
+
+  if (slide.visualType === "recap") {
+    return <ProcessFlow items={slide.visualItems ?? slide.bullets} />
+  }
+
+  if (slide.visualType === "closing") {
+    return <ClosingScene slide={slide} />
+  }
+
+  return <ProcessFlow items={slide.visualItems ?? slide.bullets} compact={slide.bullets.length > 4} />
+}
+
+function HeroStage() {
+  const totalSeconds = slides.reduce((sum, item) => sum + item.durationSec, 0)
+  const minutes = Math.round(totalSeconds / 60)
+
+  return (
+    <CoverScene
+      totalSlides={slides.length}
+      totalMinutes={minutes}
+      teamCount={members.length}
+    />
+  )
+}
+
+export function SlideScene({ slide }: SlideSceneProps) {
+  const hero = slide.visualType === "cover"
+  const fullStage =
+    slide.visualType === "interaction" ||
+    slide.visualType === "qa" ||
+    slide.visualType === "closing" ||
+    slide.visualType === "decision" ||
+    slide.visualType === "org" ||
+    slide.visualType === "process" ||
+    slide.visualType === "sop"
+
+  return (
+    <SlideShell slide={slide} total={slides.length} hero={hero}>
+      {hero ? (
+        <HeroStage />
+      ) : slide.visualType === "members" ? (
+        <Stage slide={slide} />
+      ) : fullStage ? (
+        <Stage slide={slide} />
+      ) : (
+        <div className="grid h-full grid-cols-[0.42fr_0.58fr] gap-8">
+          <BulletStack slide={slide} />
+          <Stage slide={slide} />
+        </div>
+      )}
+    </SlideShell>
+  )
+}

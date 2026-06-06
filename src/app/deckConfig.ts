@@ -1,0 +1,17 @@
+export const deckConfig = {
+  hash: true,
+  controls: true,
+  progress: false,
+  center: false,
+  width: 1920,
+  height: 1080,
+  margin: 0,
+  minScale: 0.2,
+  maxScale: 1.6,
+  transition: "fade",
+  transitionSpeed: "default",
+  backgroundTransition: "fade",
+  fragmentInURL: true,
+  slideNumber: false,
+  keyboard: true,
+} as const
