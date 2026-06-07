@@ -1,4 +1,14 @@
-import { CheckCircle2, FileText, LineChart, Scale, WalletCards } from "lucide-react"
+import {
+  Building2,
+  ClipboardCheck,
+  FileText,
+  Landmark,
+  MapPinned,
+  Route,
+  Scale,
+  Target,
+  UsersRound,
+} from "lucide-react"
 import { motion } from "motion/react"
 
 import { fadeUp, stagger } from "@/lib/motion"
@@ -9,79 +19,104 @@ interface CoverSceneProps {
   teamCount: number
 }
 
-const systemCards = [
+const implementationSteps = [
   {
-    label: "PLAN",
-    title: "Ý tưởng",
-    detail: "khóa giả thuyết",
-    Icon: FileText,
+    label: "01",
+    name: "Kế hoạch",
+    caption: "khái niệm, căn cứ, phương pháp",
+    Icon: ClipboardCheck,
   },
   {
-    label: "LEGAL",
-    title: "Pháp lý",
-    detail: "chạy hợp lệ",
+    label: "02",
+    name: "Pháp lý",
+    caption: "hình thức và nhân tố lựa chọn",
     Icon: Scale,
   },
   {
-    label: "OPERATE",
-    title: "Vận hành",
-    detail: "lặp lại được",
-    Icon: CheckCircle2,
+    label: "03",
+    name: "Triết lý",
+    caption: "sứ mệnh, mục tiêu, giá trị",
+    Icon: Target,
   },
   {
-    label: "CASH",
-    title: "Dòng tiền",
-    detail: "biết còn bao lâu",
-    Icon: WalletCards,
+    label: "04",
+    name: "Thủ tục",
+    caption: "đăng ký và thủ tục khác",
+    Icon: FileText,
   },
   {
-    label: "KPI",
-    title: "Đo lường",
-    detail: "ra quyết định",
-    Icon: LineChart,
+    label: "05",
+    name: "Cơ sở VC",
+    caption: "quy mô, địa điểm, phương pháp",
+    Icon: MapPinned,
   },
 ]
 
+const textbookFlow = [
+  { label: "Phần 1", detail: "lập kế hoạch tạo lập doanh nghiệp" },
+  { label: "Phần 2-4", detail: "pháp lý, triết lý và thủ tục" },
+  { label: "Phần 5", detail: "các lựa chọn tạo cơ sở vật chất" },
+]
+
 export function CoverScene({ totalSlides, totalMinutes, teamCount }: CoverSceneProps) {
+  const metrics = [
+    { value: totalSlides, label: "slide" },
+    { value: totalMinutes, label: "phút" },
+    { value: teamCount, label: "thành viên" },
+  ]
+
   return (
     <motion.div
       variants={stagger}
-      className="grid h-full grid-cols-[0.86fr_1.14fr] items-stretch gap-10"
+      className="cover-stage grid h-full grid-cols-[0.76fr_1.24fr] items-stretch gap-8"
     >
       <motion.aside
         variants={fadeUp}
-        className="flex min-h-0 flex-col justify-between border-l-4 border-[var(--deck-primary)] pl-8"
+        className="cover-meta-panel flex min-h-0 flex-col justify-between border border-(--deck-border) bg-(--deck-surface) p-7 shadow-(--deck-shadow)"
       >
-        <div className="space-y-5">
-          <div className="w-fit border border-[var(--deck-border)] bg-[var(--deck-surface)] px-4 py-2 text-[17px] font-bold uppercase tracking-[0.12em] text-[var(--deck-secondary)]">
-            Do nhóm 3 thực hiện
+        <div className="space-y-8">
+          <div className="flex items-start justify-between gap-6">
+            <div>
+              <p className="text-[16px] font-black uppercase text-(--deck-secondary)">
+                Do nhóm 3 thực hiện
+              </p>
+              <h2 className="mt-3 text-[34px] leading-[1.08]">Bản đồ giáo trình</h2>
+            </div>
+            <div className="grid h-14 w-14 place-items-center border border-(--deck-primary) text-(--deck-primary)">
+              <Route size={28} strokeWidth={1.8} />
+            </div>
           </div>
-          <div className="space-y-4 text-[24px] leading-[1.45] text-[var(--deck-muted)]">
-            <p>
-              <strong className="text-[var(--deck-text)]">Giảng viên:</strong> Đỗ Đình Thanh
-            </p>
-            <p>
-              <strong className="text-[var(--deck-text)]">Môn học:</strong> Khởi nghiệp
-            </p>
+
+          <div className="grid gap-4">
+            <div className="cover-info-row">
+              <Landmark size={24} strokeWidth={1.8} />
+              <div>
+                <span>Giảng viên</span>
+                <strong>Đỗ Đình Thanh</strong>
+              </div>
+            </div>
+            <div className="cover-info-row">
+              <Building2 size={24} strokeWidth={1.8} />
+              <div>
+                <span>Môn học</span>
+                <strong>Khởi nghiệp</strong>
+              </div>
+            </div>
+            <div className="cover-info-row">
+              <UsersRound size={24} strokeWidth={1.8} />
+              <div>
+                <span>Nhóm trình bày</span>
+                <strong>Nhóm 3</strong>
+              </div>
+            </div>
           </div>
         </div>
 
         <div className="grid grid-cols-3 gap-3">
-          {[
-            { value: totalSlides, label: "slide" },
-            { value: totalMinutes, label: "phút" },
-            { value: teamCount, label: "thành viên" },
-          ].map((metric) => (
-            <div
-              key={metric.label}
-              className="border border-[var(--deck-border)] bg-[var(--deck-surface)] p-3"
-            >
-              <div className="text-[30px] font-black leading-none text-[var(--deck-primary)]">
-                {metric.value}
-              </div>
-              <div className="mt-2 text-[13px] font-semibold uppercase tracking-[0.08em] text-[var(--deck-muted)]">
-                {metric.label}
-              </div>
+          {metrics.map((metric) => (
+            <div key={metric.label} className="cover-metric">
+              <strong>{metric.value}</strong>
+              <span>{metric.label}</span>
             </div>
           ))}
         </div>
@@ -89,82 +124,57 @@ export function CoverScene({ totalSlides, totalMinutes, teamCount }: CoverSceneP
 
       <motion.div
         variants={fadeUp}
-        className="relative overflow-hidden border border-[var(--deck-border)] bg-[var(--deck-surface)] p-6 shadow-[var(--deck-shadow)]"
+        className="cover-system-panel relative min-h-0 overflow-hidden border border-(--deck-border) bg-(--deck-surface) p-8 shadow-(--deck-shadow)"
       >
-        <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(229,231,235,0.55)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,231,235,0.55)_1px,transparent_1px)] bg-[size:40px_40px]" />
-        <div className="relative z-10 flex h-full flex-col justify-between">
+        <div className="cover-blueprint-grid" />
+        <div className="relative z-10 flex h-full flex-col justify-between gap-8">
           <div className="flex items-start justify-between gap-8">
             <div>
-              <p className="text-[17px] font-bold uppercase tracking-[0.14em] text-[var(--deck-secondary)]">
-                Implementation system
+              <p className="text-[16px] font-black uppercase text-(--deck-secondary)">
+                Chapter outline
               </p>
-              <h2 className="mt-3 max-w-[640px] text-[36px] leading-[1.08]">
-                Plan → Legal → Operate → Cash → KPI
+              <h2 className="mt-3 max-w-[780px] text-[46px] leading-[1.06]">
+                Bám sát 5 nội dung triển khai tạo lập doanh nghiệp
               </h2>
             </div>
-            <div className="grid h-20 w-20 place-items-center border-2 border-[var(--deck-primary)] text-[38px] font-black text-[var(--deck-primary)]">
-              06
+            <div className="cover-system-number">
+              <span>05</span>
+              <small>nội dung</small>
             </div>
           </div>
 
-          <div className="relative mt-6 grid grid-cols-5 gap-3">
-            <div className="absolute left-[9%] right-[9%] top-[42px] h-px bg-[var(--deck-border)]" />
-            {systemCards.map(({ label, title, detail, Icon }, index) => (
-              <motion.article
-                key={label}
-                variants={fadeUp}
-                className="relative min-h-[142px] border border-[var(--deck-border)] bg-[rgba(255,255,255,0.92)] p-4 shadow-[var(--deck-shadow)]"
-              >
-                <div className="mb-3 flex items-center justify-between">
-                  <span className="text-[15px] font-black text-[var(--deck-secondary)]">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <Icon size={22} strokeWidth={1.9} className="text-[var(--deck-primary)]" />
+          <div className="relative grid grid-cols-5 gap-3">
+            <div className="absolute left-[8%] right-[8%] top-[44px] h-px bg-(--deck-border)" />
+            {implementationSteps.map(({ label, name, caption, Icon }) => (
+              <motion.article key={label} variants={fadeUp} className="cover-step">
+                <div className="flex items-center justify-between gap-3">
+                  <span>{label}</span>
+                  <Icon size={25} strokeWidth={1.8} />
                 </div>
-                <div className="text-[13px] font-bold uppercase tracking-[0.1em] text-[var(--deck-muted)]">
-                  {label}
-                </div>
-                <strong className="mt-2 block text-[24px] leading-[1.08]">{title}</strong>
-                <p className="mt-2 text-[16px] leading-[1.3] text-[var(--deck-muted)]">{detail}</p>
+                <strong>{name}</strong>
+                <p>{caption}</p>
               </motion.article>
             ))}
           </div>
 
-          <div className="grid grid-cols-[1fr_250px] gap-4">
-            <div className="border border-[var(--deck-border)] bg-[rgba(255,255,255,0.92)] p-4">
-              <div className="mb-2 flex items-center justify-between">
-                <span className="text-[16px] font-bold uppercase tracking-[0.1em] text-[var(--deck-muted)]">
-                  90 ngày đầu
-                </span>
-                <span className="text-[16px] font-bold text-[var(--deck-secondary)]">
-                  setup - validate - stabilize
-                </span>
+          <div className="grid grid-cols-[1fr_270px] gap-4">
+            <div className="cover-timeline">
+              <div className="flex items-center justify-between">
+                <span>Mạch tài liệu</span>
+                <strong>kế hoạch - pháp lý - cơ sở vật chất</strong>
               </div>
-              <svg viewBox="0 0 700 120" className="h-[92px] w-full" role="img">
-                <path
-                  d="M28 92 C120 86 144 36 230 42 S350 104 440 58 560 22 672 28"
-                  fill="none"
-                  stroke="#2563EB"
-                  strokeWidth="5"
-                  strokeLinecap="round"
-                />
-                <path
-                  d="M28 96 H672"
-                  fill="none"
-                  stroke="#E5E7EB"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                />
-                {[28, 230, 440, 672].map((x) => (
-                  <circle key={x} cx={x} cy={x === 28 ? 92 : x === 230 ? 42 : x === 440 ? 58 : 28} r="8" fill="#0F766E" />
+              <div className="mt-5 grid grid-cols-3 gap-3">
+                {textbookFlow.map((item) => (
+                  <div key={item.label}>
+                    <b>{item.label}</b>
+                    <p>{item.detail}</p>
+                  </div>
                 ))}
-              </svg>
+              </div>
             </div>
-            <div className="flex flex-col justify-between border border-[var(--deck-border)] bg-[rgba(255,255,255,0.92)] p-4">
-              <span className="text-[16px] font-bold uppercase tracking-[0.1em] text-[var(--deck-muted)]">
-                Mục tiêu
-              </span>
-              <strong className="text-[28px] leading-[1.1]">từ kế hoạch sang hệ thống chạy được</strong>
+            <div className="cover-outcome">
+              <span>Mục tiêu</span>
+              <strong>nắm đúng việc cần làm khi tạo lập doanh nghiệp</strong>
             </div>
           </div>
         </div>

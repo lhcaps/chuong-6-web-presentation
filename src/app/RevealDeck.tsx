@@ -7,7 +7,8 @@ import Search from "reveal.js/plugin/search"
 
 import { slideComponents } from "@/slides"
 import { deckConfig } from "./deckConfig"
-import { TransitionProvider, getRevealTransition } from "@/lib/transitionContext"
+import { TransitionProvider } from "@/lib/transitionContext"
+import { getRevealTransition } from "@/lib/transitionMap"
 import { slides } from "@/data/slides"
 import type { VisualType } from "@/data/types"
 

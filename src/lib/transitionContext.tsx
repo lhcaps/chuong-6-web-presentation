@@ -1,7 +1,6 @@
 import {
   createContext,
   useCallback,
-  useContext,
   useRef,
   useState,
   useEffect,
@@ -66,13 +65,3 @@ export function TransitionProvider({ children }: TransitionProviderProps) {
     </TransitionContext.Provider>
   )
 }
-
-export function useTransition() {
-  const ctx = useContext(TransitionContext)
-  if (!ctx) {
-    throw new Error("useTransition must be used within TransitionProvider")
-  }
-  return ctx
-}
-
-export { getRevealTransition } from "./transitionMap"

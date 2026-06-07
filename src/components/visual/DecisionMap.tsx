@@ -19,50 +19,41 @@ function DecisionCard({
 }) {
   const borderColor =
     tone === "primary"
-      ? "border-[var(--deck-primary)]"
+      ? "border-(--deck-primary)"
       : tone === "secondary"
-        ? "border-[var(--deck-secondary)]"
+        ? "border-(--deck-secondary)"
         : tone === "warning"
-          ? "border-[var(--deck-warning)]"
-          : "border-[var(--deck-border)]"
+          ? "border-(--deck-warning)"
+          : "border-(--deck-border)"
 
   return (
     <motion.article
       variants={fadeUp}
-      className={`relative flex min-h-[150px] flex-col justify-between border bg-[var(--deck-surface)] p-5 shadow-[var(--deck-shadow)] ${borderColor}`}
+      className={`relative flex min-h-[150px] flex-col justify-between border bg-(--deck-surface) p-5 shadow-(--deck-shadow) ${borderColor}`}
     >
-      <div className="text-[15px] font-black uppercase tracking-[0.12em] text-[var(--deck-secondary)]">
+      <div className="text-[15px] font-black uppercase text-(--deck-secondary)">
         {eyebrow}
       </div>
       <h3 className="mt-3 text-[30px] leading-[1.12]">{title}</h3>
-      <p className="mt-3 text-[18px] leading-[1.4] text-[var(--deck-muted)]">{detail}</p>
+      <p className="mt-3 text-[18px] leading-[1.4] text-(--deck-muted)">{detail}</p>
     </motion.article>
   )
 }
 
 export function DecisionMap({ items }: DecisionMapProps) {
-  const labels = {
-    root: items[0] ?? "Bắt đầu từ quy mô và trách nhiệm",
-    left: items[1] ?? "Một chủ, quy mô nhỏ",
-    right: items[2] ?? "Nhiều founder hoặc cần gọi vốn",
-    risk: items[3] ?? "Rủi ro trách nhiệm cao?",
-    household: items[4] ?? "Hộ kinh doanh",
-    company: items[5] ?? "Doanh nghiệp",
-  }
-
   return (
     <motion.div
       variants={stagger}
-      className="relative h-full min-h-[560px] overflow-hidden border border-[var(--deck-border)] bg-[var(--deck-surface)] p-8 shadow-[var(--deck-shadow)]"
+      className="relative h-full min-h-[560px] overflow-hidden border border-(--deck-border) bg-(--deck-surface) p-8 shadow-(--deck-shadow)"
     >
-      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(229,231,235,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,231,235,0.5)_1px,transparent_1px)] bg-[size:36px_36px]" />
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,rgba(229,231,235,0.5)_1px,transparent_1px),linear-gradient(to_bottom,rgba(229,231,235,0.5)_1px,transparent_1px)] bg-size-[36px_36px]" />
 
       <div className="relative z-10 grid h-full grid-rows-[auto_1fr_auto] gap-6">
-        <div className="mx-auto w-[520px]">
+        <div className="mx-auto w-[560px]">
           <DecisionCard
             eyebrow="Câu hỏi gốc"
-            title={labels.root}
-            detail="Đừng chọn loại hình theo cảm tính. Hãy đi từ quy mô, vốn góp và mức rủi ro."
+            title={items[0] ?? "Bắt đầu từ mục đích"}
+            detail="Trước hết phải xác định mục đích kinh doanh hay mục đích xã hội."
             tone="primary"
           />
         </div>
@@ -70,36 +61,36 @@ export function DecisionMap({ items }: DecisionMapProps) {
         <div className="relative grid grid-cols-[1fr_0.86fr_1fr] items-stretch gap-6">
           <div className="absolute left-[16%] right-[16%] top-1/2 h-px bg-[var(--deck-border)]" />
           <DecisionCard
-            eyebrow="Nhánh A"
-            title={labels.left}
-            detail="Phù hợp khi bán nhỏ, ít người góp vốn và rủi ro trách nhiệm thấp."
+            eyebrow="Nhân tố A"
+            title={items[1] ?? "Mong muốn phát triển"}
+            detail="Cân nhắc mong muốn phát triển và khả năng đầu tư của người khởi sự."
             tone="secondary"
           />
           <DecisionCard
-            eyebrow="Điểm kiểm tra"
-            title={labels.risk}
-            detail="Nếu có rủi ro tài sản, hợp đồng hoặc gọi vốn, nên tách trách nhiệm rõ hơn."
+            eyebrow="Nhân tố B"
+            title={items[2] ?? "Khả năng đầu tư"}
+            detail="Xem nguồn vốn và mức cam kết đầu tư trước khi chọn loại hình."
             tone="warning"
           />
           <DecisionCard
-            eyebrow="Nhánh B"
-            title={labels.right}
-            detail="Cần cấu trúc rõ quyền, vốn, trách nhiệm và khả năng mở rộng."
+            eyebrow="Nhân tố C"
+            title={items[3] ?? "Tính cách và rủi ro"}
+            detail="Người chịu rủi ro cao hay thấp sẽ phù hợp với hình thức pháp lý khác nhau."
             tone="primary"
           />
         </div>
 
         <div className="grid grid-cols-2 gap-6">
           <DecisionCard
-            eyebrow="Kết quả A"
-            title={labels.household}
-            detail="Gọn, nhanh, hợp với quy mô nhỏ nhưng hạn chế khi mở rộng."
+            eyebrow="Điều kiện quản trị"
+            title={items[4] ?? "Khả năng điều hành"}
+            detail="Khả năng điều hành và lãnh đạo quyết định mức độ phù hợp của từng loại hình."
             tone="secondary"
           />
           <DecisionCard
-            eyebrow="Kết quả B"
-            title={labels.company}
-            detail="Rõ cấu trúc, dễ chia quyền và chuẩn bị tốt hơn cho tăng trưởng."
+            eyebrow="Kết luận"
+            title={items[5] ?? "Loại hình phù hợp"}
+            detail="Hình thức pháp lý phải khớp với mục đích, nguồn lực, rủi ro và định hướng phát triển."
             tone="primary"
           />
         </div>

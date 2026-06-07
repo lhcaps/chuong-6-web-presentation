@@ -15,6 +15,8 @@ import { ProcessFlow } from "@/components/visual/ProcessFlow"
 import { RiskMatrix } from "@/components/visual/RiskMatrix"
 import { Roadmap } from "@/components/visual/Roadmap"
 import { TeamGrid } from "@/components/visual/TeamGrid"
+import { fadeUp, stagger } from "@/lib/motion"
+import { motion } from "motion/react"
 
 interface SlideSceneProps {
   slide: DeckSlide
@@ -38,13 +40,52 @@ function BulletStack({ slide }: SlideSceneProps) {
       {slide.bullets.map((bullet) => (
         <div
           key={bullet}
-          className="flex items-start gap-4 border-b border-[var(--deck-border)] pb-4 last:border-b-0"
+          className="flex items-start gap-4 border-b border-(--deck-border) pb-4 last:border-b-0"
         >
-          <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-[var(--deck-primary)]" />
-          <p className="text-[26px] text-[var(--deck-text)]">{bullet}</p>
+          <span className="mt-1 h-3 w-3 shrink-0 rounded-full bg-(--deck-primary)" />
+          <p className="text-[26px] text-(--deck-text)">{bullet}</p>
         </div>
       ))}
     </div>
+  )
+}
+
+function ChecklistBoard({ slide }: SlideSceneProps) {
+  const items = slide.visualItems?.length ? slide.visualItems : slide.bullets
+
+  return (
+    <motion.div variants={stagger} className="grid h-full grid-cols-[0.78fr_1.22fr] gap-6">
+      <motion.article
+        variants={fadeUp}
+        className="flex min-h-0 flex-col justify-between border-l-4 border-(--deck-primary) bg-(--deck-surface) p-8 shadow-(--deck-shadow)"
+      >
+        <div>
+          <p className="text-[18px] font-black uppercase text-(--deck-secondary)">Bộ lọc trước khi vận hành</p>
+          <h3 className="mt-5 max-w-[520px] text-[46px] leading-[1.08]">7 câu hỏi sống còn</h3>
+          <p className="mt-6 max-w-[560px] text-[25px] leading-[1.42] text-(--deck-muted)">
+            {slide.message}
+          </p>
+        </div>
+        <div className="border-t border-(--deck-border) pt-5 text-[21px] font-semibold text-(--deck-muted)">
+          Chụp lại slide này để rà soát trước ngày đưa doanh nghiệp vào hoạt động.
+        </div>
+      </motion.article>
+
+      <motion.div variants={stagger} className="grid h-full grid-cols-2 gap-4">
+        {items.map((item, index) => (
+          <motion.article
+            key={item}
+            variants={fadeUp}
+            className="flex min-h-[118px] items-start gap-4 border border-(--deck-border) bg-(--deck-surface) p-5 shadow-(--deck-shadow)"
+          >
+            <span className="grid h-10 w-10 shrink-0 place-items-center border border-(--deck-primary) text-[17px] font-black text-(--deck-primary)">
+              {String(index + 1).padStart(2, "0")}
+            </span>
+            <p className="text-[21px] font-semibold leading-[1.24] text-(--deck-text)">{item}</p>
+          </motion.article>
+        ))}
+      </motion.div>
+    </motion.div>
   )
 }
 
@@ -55,6 +96,10 @@ function Stage({ slide }: SlideSceneProps) {
 
   if (slide.visualType === "roadmap") {
     return <Roadmap />
+  }
+
+  if (slide.visualType === "checklist") {
+    return <ChecklistBoard slide={slide} />
   }
 
   if (slide.visualType === "comparison") {
@@ -97,14 +142,15 @@ function Stage({ slide }: SlideSceneProps) {
   }
 
   if (slide.visualType === "timeline") {
+    const count = timelineMilestones.length
     return (
-      <div className="grid h-full grid-cols-3 gap-6">
+      <div className="grid h-full gap-6" style={{ gridTemplateColumns: `repeat(${count}, minmax(0, 1fr))` }}>
         {timelineMilestones.map((item) => (
           <article
             key={item.day}
-            className="fragment flex flex-col justify-between border border-[var(--deck-border)] bg-[var(--deck-surface)] p-7 shadow-[var(--deck-shadow)]"
+            className="flex flex-col justify-between border border-(--deck-border) bg-(--deck-surface) p-7 shadow-(--deck-shadow)"
           >
-            <span className="text-[54px] font-black leading-none text-[var(--deck-primary)]">
+            <span className="text-[54px] font-black leading-none text-(--deck-primary)">
               {item.day}
             </span>
             <div>
@@ -157,6 +203,7 @@ export function SlideScene({ slide }: SlideSceneProps) {
     slide.visualType === "closing" ||
     slide.visualType === "decision" ||
     slide.visualType === "org" ||
+    slide.visualType === "checklist" ||
     slide.visualType === "process" ||
     slide.visualType === "sop"
 

@@ -3,51 +3,34 @@ import { Slide02Members } from "./02_Members"
 import { Slide03Importance } from "./03_Importance"
 import { Slide04ChapterMap } from "./04_ChapterMap"
 import { Slide05IdeaToBusiness } from "./05_IdeaToBusiness"
-import { Slide06ImplementationChecklist } from "./06_ImplementationChecklist"
-import { Slide07BusinessModel } from "./07_BusinessModel"
-import { Slide08LegalEntity } from "./08_LegalEntity"
-import { Slide09LegalDecisionTree } from "./09_LegalDecisionTree"
-import { Slide10RegistrationDossier } from "./10_RegistrationDossier"
-import { Slide11RegistrationProcess } from "./11_RegistrationProcess"
-import { Slide12InitialLegalCosts } from "./12_InitialLegalCosts"
-import { Slide13LegalRisks } from "./13_LegalRisks"
-import { Slide14WrongLegalFormCase } from "./14_WrongLegalFormCase"
-import { Slide15OperatingSystem } from "./15_OperatingSystem"
-import { Slide16FounderRole } from "./16_FounderRole"
-import { Slide17CoreTeamRoles } from "./17_CoreTeamRoles"
-import { Slide18EarlyOrgChart } from "./18_EarlyOrgChart"
-import { Slide19MinimumOpsProcess } from "./19_MinimumOpsProcess"
-import { Slide20Sop } from "./20_SOP"
-import { Slide21MinimumOffer } from "./21_MinimumOffer"
-import { Slide22LeanStartupMvp } from "./22_LeanStartupMvp"
-import { Slide23BuildMeasureLearn } from "./23_BuildMeasureLearn"
-import { Slide24CustomerValidation } from "./24_CustomerValidation"
-import { Slide25EarlySalesChannels } from "./25_EarlySalesChannels"
-import { Slide26MarketingLaunchPlan } from "./26_MarketingLaunchPlan"
-import { Slide27CustomerFunnel } from "./27_CustomerFunnel"
-import { Slide28ConversionChart } from "./28_ConversionChart"
-import { Slide29StartupCosts } from "./29_StartupCosts"
-import { Slide30InitialCashflow } from "./30_InitialCashflow"
-import { Slide31Breakeven } from "./31_Breakeven"
-import { Slide32ResourceAllocation } from "./32_ResourceAllocation"
-import { Slide33FinancialRisks } from "./33_FinancialRisks"
-import { Slide34RiskManagement } from "./34_RiskManagement"
-import { Slide35MarketRisks } from "./35_MarketRisks"
-import { Slide36OperatingRisks } from "./36_OperatingRisks"
-import { Slide37RiskMatrix } from "./37_RiskMatrix"
-import { Slide38StartupKpi } from "./38_StartupKpi"
-import { Slide39KpiDashboard } from "./39_KpiDashboard"
-import { Slide40First90Days } from "./40_First90Days"
-import { Slide41First30Days } from "./41_First30Days"
-import { Slide42First60Days } from "./42_First60Days"
-import { Slide43First90DayMilestone } from "./43_First90DayMilestone"
-import { Slide44CommonMistakes } from "./44_CommonMistakes"
-import { Slide45PreLaunchChecklist } from "./45_PreLaunchChecklist"
-import { Slide46ClassInteraction } from "./46_ClassInteraction"
-import { Slide47CriticalQuestionOne } from "./47_CriticalQuestionOne"
-import { Slide48CriticalQuestionTwo } from "./48_CriticalQuestionTwo"
-import { Slide49ChapterRecap } from "./49_ChapterRecap"
-import { Slide50Closing } from "./50_Closing"
+import { Slide06PlanningOverview } from "./06_PlanningOverview"
+import { Slide07PlanningMethods } from "./07_PlanningMethods"
+import { Slide08BusinessModelFoundation } from "./08_BusinessModelFoundation"
+import { Slide09LegalEntityTypes } from "./09_LegalEntityTypes"
+import { Slide10LegalCriteria } from "./10_LegalCriteria"
+import { Slide11LegalCaseStudy } from "./11_LegalCaseStudy"
+import { Slide12PhilosophyOverview } from "./12_PhilosophyOverview"
+import { Slide13PhilosophyRequirements } from "./13_PhilosophyRequirements"
+import { Slide14PhilosophyExample } from "./14_PhilosophyExample"
+import { Slide15RegistrationDossier } from "./15_RegistrationDossier"
+import { Slide16RegistrationProcess } from "./16_RegistrationProcess"
+import { Slide17LegalRisks } from "./17_LegalRisks"
+import { Slide18ScaleSelection } from "./18_ScaleSelection"
+import { Slide19LocationSelection } from "./19_LocationSelection"
+import { Slide20ProductionMethod } from "./20_ProductionMethod"
+import { Slide21MarketValidation } from "./21_MarketValidation"
+import { Slide22InfrastructureCase } from "./22_InfrastructureCase"
+import { Slide23ExecutionTimeline } from "./23_ExecutionTimeline"
+import { Slide24Milestone30 } from "./24_Milestone30"
+import { Slide25Milestone60 } from "./25_Milestone60"
+import { Slide26Milestone90 } from "./26_Milestone90"
+import { Slide27CommonMistakes } from "./27_CommonMistakes"
+import { Slide28ChapterChecklist } from "./28_ChapterChecklist"
+import { Slide29ClassInteraction } from "./29_ClassInteraction"
+import { Slide30CriticalQuestionOne } from "./30_CriticalQuestionOne"
+import { Slide31CriticalQuestionTwo } from "./31_CriticalQuestionTwo"
+import { Slide32ChapterRecap } from "./32_ChapterRecap"
+import { Slide33Closing } from "./33_Closing"
 
 export const slideComponents = [
   Slide01Cover,
@@ -55,49 +38,32 @@ export const slideComponents = [
   Slide03Importance,
   Slide04ChapterMap,
   Slide05IdeaToBusiness,
-  Slide06ImplementationChecklist,
-  Slide07BusinessModel,
-  Slide08LegalEntity,
-  Slide09LegalDecisionTree,
-  Slide10RegistrationDossier,
-  Slide11RegistrationProcess,
-  Slide12InitialLegalCosts,
-  Slide13LegalRisks,
-  Slide14WrongLegalFormCase,
-  Slide15OperatingSystem,
-  Slide16FounderRole,
-  Slide17CoreTeamRoles,
-  Slide18EarlyOrgChart,
-  Slide19MinimumOpsProcess,
-  Slide20Sop,
-  Slide21MinimumOffer,
-  Slide22LeanStartupMvp,
-  Slide23BuildMeasureLearn,
-  Slide24CustomerValidation,
-  Slide25EarlySalesChannels,
-  Slide26MarketingLaunchPlan,
-  Slide27CustomerFunnel,
-  Slide28ConversionChart,
-  Slide29StartupCosts,
-  Slide30InitialCashflow,
-  Slide31Breakeven,
-  Slide32ResourceAllocation,
-  Slide33FinancialRisks,
-  Slide34RiskManagement,
-  Slide35MarketRisks,
-  Slide36OperatingRisks,
-  Slide37RiskMatrix,
-  Slide38StartupKpi,
-  Slide39KpiDashboard,
-  Slide40First90Days,
-  Slide41First30Days,
-  Slide42First60Days,
-  Slide43First90DayMilestone,
-  Slide44CommonMistakes,
-  Slide45PreLaunchChecklist,
-  Slide46ClassInteraction,
-  Slide47CriticalQuestionOne,
-  Slide48CriticalQuestionTwo,
-  Slide49ChapterRecap,
-  Slide50Closing,
+  Slide06PlanningOverview,
+  Slide07PlanningMethods,
+  Slide08BusinessModelFoundation,
+  Slide09LegalEntityTypes,
+  Slide10LegalCriteria,
+  Slide11LegalCaseStudy,
+  Slide12PhilosophyOverview,
+  Slide13PhilosophyRequirements,
+  Slide14PhilosophyExample,
+  Slide15RegistrationDossier,
+  Slide16RegistrationProcess,
+  Slide17LegalRisks,
+  Slide18ScaleSelection,
+  Slide19LocationSelection,
+  Slide20ProductionMethod,
+  Slide21MarketValidation,
+  Slide22InfrastructureCase,
+  Slide23ExecutionTimeline,
+  Slide24Milestone30,
+  Slide25Milestone60,
+  Slide26Milestone90,
+  Slide27CommonMistakes,
+  Slide28ChapterChecklist,
+  Slide29ClassInteraction,
+  Slide30CriticalQuestionOne,
+  Slide31CriticalQuestionTwo,
+  Slide32ChapterRecap,
+  Slide33Closing,
 ]

@@ -38,21 +38,25 @@ export function SlideShell({ slide, total, children, hero = false }: SlideShellP
     <section ref={sectionRef}>
       <div className="deck-slide" key={key}>
         <div className="deck-watermark">{String(slide.id).padStart(2, "0")}</div>
-        <div className="deck-inner">
+        <div className={`deck-inner${hero ? " deck-inner--hero" : ""}`}>
           {hero ? (
             <motion.header
               data-animate="header"
               initial={{ opacity: 0, y: 32, scale: 0.95 }}
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{ type: "spring", stiffness: 100, damping: 20, mass: 0.8, delay: 0.05 }}
-              className="grid grid-cols-12 gap-8"
+              className="cover-title-header grid grid-cols-[1fr_260px] items-start gap-8"
             >
-              <div className="col-span-9 flex flex-col gap-8">
-                <div className="deck-kicker">{slide.section}</div>
+              <div className="flex flex-col gap-7">
+                <div className="deck-kicker">Khởi nghiệp / Nhóm 3</div>
                 <h1>{slide.title}</h1>
                 <p className="max-w-[900px] text-[28px] leading-[1.5] text-[var(--deck-muted)]">
                   {slide.message}
                 </p>
+              </div>
+              <div className="cover-chapter-mark" aria-hidden="true">
+                <span>06</span>
+                <small>Chapter</small>
               </div>
             </motion.header>
           ) : (
@@ -64,7 +68,7 @@ export function SlideShell({ slide, total, children, hero = false }: SlideShellP
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 120, damping: 22, mass: 0.8, delay: 0.12 }}
-            className="min-h-0"
+            className="h-full min-h-0"
           >
             {children}
           </motion.div>
@@ -74,7 +78,7 @@ export function SlideShell({ slide, total, children, hero = false }: SlideShellP
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ type: "spring", stiffness: 130, damping: 24, mass: 0.7, delay: 0.2 }}
-            className="flex items-center justify-between border-t border-[var(--deck-border)] pt-4"
+            className="flex items-center justify-between border-t border-(--deck-border) pt-4"
           >
             <span className="text-[16px] font-medium text-[var(--deck-muted)]">
               {labels[0] ?? "Chương 6"}
