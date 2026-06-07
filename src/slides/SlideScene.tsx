@@ -183,9 +183,6 @@ function Stage({ slide }: SlideSceneProps) {
 }
 
 function HeroStage() {
-  const totalSeconds = slides.reduce((sum, item) => sum + item.durationSec, 0)
-  const minutes = Math.round(totalSeconds / 60)
-
   return (
     <CoverScene
       totalSlides={slides.length}
