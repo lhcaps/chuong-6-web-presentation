@@ -11,6 +11,22 @@ interface ComparisonMatrixProps {
 }
 
 const itemDetails: Record<string, string> = {
+  "Công việc": "xác định toàn bộ việc cần làm",
+  "Người thực hiện": "phân công rõ trách nhiệm",
+  "Bên liên quan": "xác định người/bộ phận phối hợp",
+  "Bắt đầu": "có mốc khởi động cụ thể",
+  "Kết thúc": "có thời hạn hoàn thành",
+  "Nguồn lực": "đảm bảo và phối hợp nguồn lực cần thiết",
+  "Hình thức pháp lý": "nhận diện đúng loại hình",
+  "Nhân tố lựa chọn": "mục đích, đầu tư, rủi ro, lãnh đạo",
+  "Sứ mạng/mục tiêu/giá trị": "làm nền cho triết lý kinh doanh",
+  "Đăng ký kinh doanh": "đúng quy trình, hồ sơ, cơ quan",
+  "Thủ tục khác": "hoàn tất điều kiện pháp lý liên quan",
+  "Quy mô": "chọn theo mức cầu và nguồn lực",
+  "Địa điểm": "cân nhắc lao động, vận chuyển, nhà xưởng",
+  "Lao động/vận chuyển/nhà xưởng": "các yếu tố chi phí chính",
+  "Phương pháp SXKD": "cách kết hợp nguồn lực tạo sản phẩm/dịch vụ",
+  "Dây chuyền/nhóm/đơn chiếc": "ba cách tổ chức sản xuất chính",
   "Làm ra": "Sản phẩm đủ tốt để giao đúng lời hứa.",
   "Bán được": "Có kênh tiếp cận và chuyển đổi khách thật.",
   "Giao được": "Quy trình giúp chất lượng không phụ thuộc trí nhớ.",

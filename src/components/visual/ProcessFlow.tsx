@@ -14,7 +14,7 @@ const processDetails: Record<string, string> = {
   "Nộp đăng ký": "nộp đúng kênh và theo dõi trạng thái",
   "Nhận kết quả": "kiểm tra giấy phép trước khi dùng",
   "Thuế và hóa đơn": "hoàn tất phần hậu đăng ký",
-  "Mục đích": "biết SOP này dùng để làm gì",
+  "Mục đích": "xác định mục đích kinh doanh hoặc mục đích xã hội",
   Input: "điều kiện cần trước khi bắt đầu",
   "Các bước": "thao tác chuẩn, không phụ thuộc trí nhớ",
   Owner: "một người chịu trách nhiệm cuối",
@@ -32,7 +32,7 @@ export function ProcessFlow({ items, compact = false }: ProcessFlowProps) {
       variants={stagger}
       className="relative flex h-full min-h-[360px] items-center"
     >
-      <div className="absolute left-8 right-8 top-1/2 h-px bg-[var(--deck-border)]" />
+      <div className="absolute left-8 right-8 top-1/2 h-px bg-(--deck-border)" />
       <div
         className="grid w-full gap-4"
         style={{ gridTemplateColumns: `repeat(${items.length}, minmax(0, 1fr))` } as CSSProperties}
@@ -41,18 +41,18 @@ export function ProcessFlow({ items, compact = false }: ProcessFlowProps) {
           <motion.article
             key={`${item}-${index}`}
             variants={fadeUp}
-            className={`relative flex min-h-[190px] flex-col justify-between border border-[var(--deck-border)] bg-[var(--deck-surface)] p-5 shadow-[var(--deck-shadow)] ${
+            className={`relative flex min-h-[190px] flex-col justify-between border border-(--deck-border) bg-(--deck-surface) p-5 shadow-(--deck-shadow) ${
               index % 2 === 0 ? "mb-14" : "mt-14"
             }`}
           >
             <div className="relative z-10 flex items-center justify-between">
-              <span className="text-[17px] font-black text-[var(--deck-secondary)]">
+              <span className="text-[17px] font-black text-(--deck-secondary)">
                 {String(index + 1).padStart(2, "0")}
               </span>
               {index < items.length - 1 ? (
-                <span className="text-[24px] font-black leading-none text-[var(--deck-primary)]">→</span>
+                <span className="text-[24px] font-black leading-none text-(--deck-primary)">→</span>
               ) : (
-                <span className="h-2.5 w-2.5 rounded-full bg-[var(--deck-secondary)]" />
+                <span className="h-2.5 w-2.5 rounded-full bg-(--deck-secondary)" />
               )}
             </div>
             <strong
@@ -61,7 +61,7 @@ export function ProcessFlow({ items, compact = false }: ProcessFlowProps) {
               {item}
             </strong>
             {processDetails[item] ? (
-              <p className="relative z-10 mt-3 text-[16px] leading-[1.35] text-[var(--deck-muted)]">
+              <p className="relative z-10 mt-3 text-[16px] leading-[1.35] text-(--deck-muted)">
                 {processDetails[item]}
               </p>
             ) : null}

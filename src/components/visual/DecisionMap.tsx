@@ -59,7 +59,7 @@ export function DecisionMap({ items }: DecisionMapProps) {
         </div>
 
         <div className="relative grid grid-cols-[1fr_0.86fr_1fr] items-stretch gap-6">
-          <div className="absolute left-[16%] right-[16%] top-1/2 h-px bg-[var(--deck-border)]" />
+          <div className="absolute left-[16%] right-[16%] top-1/2 h-px bg-(--deck-border)" />
           <DecisionCard
             eyebrow="Nhân tố A"
             title={items[1] ?? "Mong muốn phát triển"}

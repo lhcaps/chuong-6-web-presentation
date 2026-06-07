@@ -9,7 +9,7 @@ export const slides: DeckSlide[] = [
     message: "Bám sát giáo trình: từ lập kế hoạch tạo lập đến lựa chọn pháp lý, triết lý, thủ tục và cơ sở vật chất.",
     bullets: ["Do nhóm 3 thực hiện", "Giảng viên: Đỗ Đình Thanh", "Môn học: Khởi nghiệp"],
     note: "Mở bài ngắn: Chương 6 không nói về ý tưởng kinh doanh nữa, mà nói về những việc phải triển khai để một doanh nghiệp được tạo lập và có thể đi vào hoạt động.",
-    durationSec: 16,
+    durationSec: 20,
     visualType: "cover",
     visualItems: ["Kế hoạch", "Pháp lý", "Triết lý", "Thủ tục", "Cơ sở vật chất"],
     sourceIds: ["textbook"],
@@ -22,7 +22,7 @@ export const slides: DeckSlide[] = [
     message: "Nhóm trình bày theo mạch 5 phần của tài liệu Chương 6.",
     bullets: ["Phần 1: kế hoạch tạo lập", "Phần 2-4: pháp lý và triết lý kinh doanh", "Phần 5: cơ sở vật chất"],
     note: "Lướt nhanh danh sách thành viên, sau đó chuyển ngay vào bản đồ chương để tránh mất thời gian.",
-    durationSec: 14,
+    durationSec: 16,
     visualType: "members",
     sourceIds: ["textbook"],
   },
@@ -39,7 +39,7 @@ export const slides: DeckSlide[] = [
       "Giúp doanh nghiệp mới thành lập có điều kiện hoạt động ngay từ đầu",
     ],
     note: "Dẫn vào bằng câu hỏi: sau khi bản kế hoạch kinh doanh đã được duyệt, người khởi sự phải làm gì để doanh nghiệp thật sự hình thành?",
-    durationSec: 20,
+    durationSec: 24,
     visualType: "process",
     visualTitle: "Từ kế hoạch kinh doanh đến doanh nghiệp hoạt động",
     visualItems: [
@@ -65,7 +65,7 @@ export const slides: DeckSlide[] = [
       "Lựa chọn chủ yếu để tạo cơ sở vật chất",
     ],
     note: "Nhấn mạnh đây là khung chính của tài liệu. Các ví dụ phía sau chỉ dùng để minh họa cho khung này, không thay thế nội dung giáo trình.",
-    durationSec: 20,
+    durationSec: 24,
     visualType: "roadmap",
     sourceIds: ["textbook"],
   },
@@ -83,7 +83,7 @@ export const slides: DeckSlide[] = [
       "Cơ sở vật chất trả lời: quy mô, địa điểm, phương pháp sản xuất kinh doanh thế nào?",
     ],
     note: "Đây là slide chuyển mạch trước khi vào phần 1. Giữ trọng tâm ở 5 nhóm nội dung của tài liệu.",
-    durationSec: 18,
+    durationSec: 22,
     visualType: "process",
     visualItems: [
       "Biết việc phải làm",
@@ -108,7 +108,7 @@ export const slides: DeckSlide[] = [
       "Vai trò 3: xác định rõ mốc bắt đầu và kết thúc từng công việc",
     ],
     note: "Phân biệt rõ với kế hoạch kinh doanh. Kế hoạch kinh doanh nói doanh nghiệp sẽ kinh doanh như thế nào; kế hoạch tạo lập nói quá trình thành lập doanh nghiệp sẽ được triển khai ra sao.",
-    durationSec: 24,
+    durationSec: 30,
     visualType: "process",
     visualTitle: "Bản chất của kế hoạch tạo lập",
     visualItems: [
@@ -135,7 +135,7 @@ export const slides: DeckSlide[] = [
       "Căn cứ 5: mong muốn và thực lực của người khởi sự về quy mô, hình thức và thời hạn hoạt động",
     ],
     note: "Slide này bám theo đúng các căn cứ hoạch định trong tài liệu, không mở rộng sang nội dung ngoài chương.",
-    durationSec: 28,
+    durationSec: 36,
     visualType: "process",
     visualTitle: "5 căn cứ hoạch định",
     visualItems: [
@@ -162,7 +162,7 @@ export const slides: DeckSlide[] = [
       "Xác định công việc găng và công việc không găng",
     ],
     note: "Giải thích công việc găng là công việc bắt buộc hoàn thành đúng thời gian; nếu chậm sẽ ảnh hưởng tiến độ chung. Công việc không găng có độ linh hoạt hơn.",
-    durationSec: 28,
+    durationSec: 36,
     visualType: "process",
     visualTitle: "Quy trình lập sơ đồ",
     visualItems: [
@@ -180,7 +180,7 @@ export const slides: DeckSlide[] = [
     slug: "legal-entity-types",
     section: "LegalForm",
     title: "Các hình thức pháp lý doanh nghiệp ở nước ta hiện nay",
-    message: "Tài liệu liệt kê nhiều hình thức pháp lý khác nhau. Người khởi sự cần nhận diện được các lựa chọn trước khi cân nhắc loại hình phù hợp.",
+    message: "Tài liệu liệt kê nhiều hình thức pháp lý khác nhau. Điểm quan trọng không phải học thuộc từng loại, mà là hiểu vì sao người khởi sự phải chọn loại hình phù hợp với mục đích, vốn, rủi ro và khả năng quản trị.",
     bullets: [
       "Kinh doanh theo Nghị định 66/1992/HĐBT ngày 02/03/1992",
       "Doanh nghiệp tư nhân",
@@ -192,8 +192,8 @@ export const slides: DeckSlide[] = [
       "Hợp tác xã",
       "Doanh nghiệp có vốn nước ngoài",
     ],
-    note: "Slide này cần bám danh mục trong tài liệu, không thay bằng danh mục hiện đại hóa hoặc chỉ so sánh một vài loại hình phổ biến.",
-    durationSec: 28,
+    note: "Slide này cần bám danh mục trong tài liệu. Ba loại hay gặp: DNTN, TNHH, cổ phần. Không cần đọc hết 9 loại.",
+    durationSec: 30,
     visualType: "comparison",
     tableKey: "legalTypes",
     sourceIds: ["textbook"],
@@ -212,7 +212,7 @@ export const slides: DeckSlide[] = [
       "Chọn sai có thể làm quá trình phát triển bị hạn chế hoặc tăng rủi ro cho người khởi sự",
     ],
     note: "Không đi sâu luật hiện hành; trọng tâm là lý do giáo trình yêu cầu phải lựa chọn.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "decision",
     visualItems: [
       "Mục đích",
@@ -240,7 +240,7 @@ export const slides: DeckSlide[] = [
       "Muốn mở thêm doanh nghiệp để phát triển: cân nhắc công ty TNHH một hoặc vài thành viên",
     ],
     note: "Thay slide case cũ bằng các gợi ý đúng theo tài liệu. Đây là phần dễ được hỏi lại khi thuyết trình.",
-    durationSec: 28,
+    durationSec: 34,
     visualType: "process",
     visualTitle: "Các nhân tố ra quyết định",
     visualItems: [
@@ -268,7 +268,7 @@ export const slides: DeckSlide[] = [
       "Triết lý không nên viết dài, chung chung hoặc khó nhớ",
     ],
     note: "Bám sát khái lược trong tài liệu. Nói ngắn gọn: triết lý là phần định hướng, không phải khẩu hiệu trang trí.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Ba thành phần",
     visualItems: ["Sứ mạng", "Mục tiêu", "Giá trị cốt lõi"],
@@ -288,7 +288,7 @@ export const slides: DeckSlide[] = [
       "Triết lý càng rõ thì việc định hướng bộ phận và cá nhân càng dễ",
     ],
     note: "Có thể minh họa bằng một câu sứ mạng ngắn, nhưng không biến thành bài tập xây dựng thương hiệu.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Nội dung cần xác định",
     visualItems: [
@@ -314,7 +314,7 @@ export const slides: DeckSlide[] = [
       "Ý nghĩa: triết lý kinh doanh là kim chỉ nam cho hoạt động của doanh nghiệp",
     ],
     note: "Slide này thay các ví dụ ngoài tài liệu bằng đúng 3 cụm: phương pháp, yêu cầu, ý nghĩa.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "process",
     visualTitle: "Từ thỏa hiệp đến kim chỉ nam",
     visualItems: [
@@ -340,7 +340,7 @@ export const slides: DeckSlide[] = [
       "Điều kiện cấp giấy chứng nhận đăng ký kinh doanh",
     ],
     note: "Không sa vào quá nhiều luật mới. Mục tiêu là nắm các nhóm việc phải chuẩn bị khi đăng ký kinh doanh.",
-    durationSec: 24,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Nhóm việc đăng ký",
     visualItems: [
@@ -366,7 +366,7 @@ export const slides: DeckSlide[] = [
       "Nhận giấy chứng nhận đăng ký kinh doanh nếu đủ điều kiện",
     ],
     note: "Nói như một quy trình tổng quát, vì tài liệu của bạn chỉ liệt kê nhóm nội dung, không yêu cầu cập nhật từng biểu mẫu pháp luật.",
-    durationSec: 24,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Luồng đăng ký",
     visualItems: [
@@ -392,7 +392,7 @@ export const slides: DeckSlide[] = [
       "Theo dõi các quy định quản lý vĩ mô và thủ tục liên quan trong môi trường kinh doanh",
     ],
     note: "Slide cũ nói nhiều về rủi ro. Slide mới đi đúng ý tài liệu: hoàn tất các thủ tục pháp lý khác sau đăng ký.",
-    durationSec: 22,
+    durationSec: 24,
     visualType: "process",
     visualTitle: "Sau đăng ký",
     visualItems: [
@@ -418,7 +418,7 @@ export const slides: DeckSlide[] = [
       "Quy mô quá nhỏ có thể không đáp ứng được thị trường mục tiêu",
     ],
     note: "Tài liệu nêu khái quát trước rồi mới nghiên cứu nhân tố ảnh hưởng. Slide này là phần khái quát.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Quy mô là quyết định nền",
     visualItems: [
@@ -444,7 +444,7 @@ export const slides: DeckSlide[] = [
       "Người khởi sự cần cân đối giữa cầu thị trường và khả năng nguồn lực",
     ],
     note: "Đây là ý bị thiếu trong deck trước. Không thay bằng phương pháp ngoài tài liệu.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "process",
     visualTitle: "4 mức cầu khi chọn quy mô",
     visualItems: [
@@ -471,7 +471,7 @@ export const slides: DeckSlide[] = [
       "Phương pháp lựa chọn khác nhau giữa doanh nghiệp từ nhỏ trở lên và doanh nghiệp siêu nhỏ",
     ],
     note: "Slide này chỉnh lại theo đúng danh sách nhân tố trong tài liệu.",
-    durationSec: 26,
+    durationSec: 30,
     visualType: "process",
     visualTitle: "Nhân tố chọn địa điểm",
     visualItems: [
@@ -497,7 +497,7 @@ export const slides: DeckSlide[] = [
       "Dù quy mô nào, địa điểm phải phục vụ được việc triển khai hoạt động kinh doanh",
     ],
     note: "Slide này trình bày đúng phần phương pháp lựa chọn địa điểm trong tài liệu.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "process",
     visualTitle: "Theo quy mô doanh nghiệp",
     visualItems: [
@@ -523,7 +523,7 @@ export const slides: DeckSlide[] = [
       "Là một phần quan trọng trong lựa chọn cơ sở vật chất",
     ],
     note: "Đưa phần phương pháp SXKD về đúng vị trí trong nhóm cơ sở vật chất.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "process",
     visualTitle: "Cách kết hợp nguồn lực",
     visualItems: [
@@ -549,7 +549,7 @@ export const slides: DeckSlide[] = [
       "Phương pháp đúng giúp sử dụng hiệu quả cơ sở vật chất đã chuẩn bị",
     ],
     note: "Không mở rộng sang nội dung vận hành ngoài chương. Trọng tâm là ba phương pháp trong giáo trình.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "timeline",
     visualItems: ["Dây chuyền", "Theo nhóm", "Theo đơn chiếc"],
     sourceIds: ["textbook"],
@@ -569,7 +569,7 @@ export const slides: DeckSlide[] = [
       "Đã có giải pháp đảm bảo nguồn lực và phối hợp nguồn lực",
     ],
     note: "Đây là slide ôn tập phần kế hoạch, thay cho milestone 30 ngày trước đó.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "milestone",
     visualItems: [
       "Công việc",
@@ -595,7 +595,7 @@ export const slides: DeckSlide[] = [
       "Thủ tục khác: hoàn tất điều kiện pháp lý liên quan trước khi hoạt động",
     ],
     note: "Slide tổng hợp giúp người nghe thấy ba phần này liên quan chặt: chọn tư cách pháp lý, xác định định hướng, rồi làm thủ tục.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "milestone",
     visualItems: [
       "Hình thức pháp lý",
@@ -620,7 +620,7 @@ export const slides: DeckSlide[] = [
       "Ba phương pháp tổ chức sản xuất: dây chuyền, theo nhóm, theo đơn chiếc",
     ],
     note: "Slide tổng hợp đúng phần cơ sở vật chất, không đưa nội dung vận hành hoặc tài chính ngoài chương vào trọng tâm.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "milestone",
     visualItems: [
       "Quy mô",
@@ -645,7 +645,7 @@ export const slides: DeckSlide[] = [
       "Chọn quy mô, địa điểm, phương pháp sản xuất kinh doanh không phù hợp",
     ],
     note: "Dùng slide này để nhấn mạnh ý nghĩa thực hành của giáo trình, nhưng vẫn giữ nội dung trong phạm vi tài liệu.",
-    durationSec: 22,
+    durationSec: 26,
     visualType: "mistakes",
     visualItems: [
       "Thiếu kế hoạch",
@@ -672,7 +672,7 @@ export const slides: DeckSlide[] = [
       "Phương pháp sản xuất kinh doanh đã phù hợp với nguồn lực và sản phẩm/dịch vụ chưa?",
     ],
     note: "Checklist giữ đúng 5 phần tài liệu. Có thể dùng làm slide chụp lại trước khi kết thúc.",
-    durationSec: 28,
+    durationSec: 32,
     visualType: "checklist",
     visualItems: [
       "Kế hoạch: việc, người, mốc",
@@ -700,7 +700,7 @@ export const slides: DeckSlide[] = [
       "Chỉ ra công việc găng và không găng",
     ],
     note: "Cho lớp trả lời theo đúng các bước phương pháp sơ đồ trong tài liệu.",
-    durationSec: 30,
+    durationSec: 36,
     visualType: "interaction",
     visualItems: [
       "Việc gì?",
@@ -717,7 +717,7 @@ export const slides: DeckSlide[] = [
     slug: "critical-question-one",
     section: "Interaction",
     title: "Câu hỏi thảo luận 2: chọn hình thức pháp lý",
-    message: "Khi lựa chọn hình thức pháp lý, người khởi sự cần cân nhắc những nhân tố nào trước khi quyết định?",
+    message: "Một nhóm có 3 người góp vốn mở dịch vụ ăn uống quanh trường. Một người góp nhiều vốn hơn, một người trực tiếp vận hành, một người chỉ hỗ trợ marketing. Theo Chương 6, trước khi chọn loại hình pháp lý, nhóm cần cân nhắc những yếu tố nào?",
     bullets: [
       "Mục đích kinh doanh hay xã hội",
       "Mong muốn về sự phát triển và khả năng đầu tư",
@@ -726,7 +726,7 @@ export const slides: DeckSlide[] = [
       "Khả năng thay đổi các mối quan hệ sẵn có",
     ],
     note: "Đáp án nằm ở phần nhân tố lựa chọn hình thức pháp lý. Không cần hỏi theo luật hiện hành.",
-    durationSec: 25,
+    durationSec: 30,
     visualType: "qa",
     visualItems: [
       "Mục đích",
@@ -752,7 +752,7 @@ export const slides: DeckSlide[] = [
       "Lựa chọn phương pháp sản xuất kinh doanh: dây chuyền, theo nhóm hoặc theo đơn chiếc",
     ],
     note: "Đây là câu hỏi tổng hợp phần cuối của tài liệu.",
-    durationSec: 25,
+    durationSec: 30,
     visualType: "qa",
     visualItems: [
       "Quy mô",
@@ -778,7 +778,7 @@ export const slides: DeckSlide[] = [
       "Lựa chọn cơ sở vật chất: quy mô, địa điểm và phương pháp sản xuất kinh doanh",
     ],
     note: "Đọc recap theo đúng outline của tài liệu bạn gửi.",
-    durationSec: 24,
+    durationSec: 28,
     visualType: "recap",
     visualItems: [
       "Kế hoạch tạo lập",
@@ -797,7 +797,7 @@ export const slides: DeckSlide[] = [
     message: "Triển khai tạo lập doanh nghiệp là quá trình biến kế hoạch kinh doanh thành một doanh nghiệp có tư cách phù hợp, triết lý rõ ràng, thủ tục đầy đủ và cơ sở vật chất đủ điều kiện hoạt động.",
     bullets: ["Kế hoạch rõ", "Pháp lý phù hợp", "Triết lý nhất quán", "Thủ tục đầy đủ", "Cơ sở vật chất khả thi"],
     note: "Kết bằng thông điệp bám tài liệu: muốn doanh nghiệp hoạt động được thì phải chuẩn bị đủ 5 nhóm nội dung của Chương 6.",
-    durationSec: 18,
+    durationSec: 20,
     visualType: "closing",
     visualItems: ["Kế hoạch", "Pháp lý", "Triết lý", "Thủ tục", "Cơ sở vật chất"],
     sourceIds: ["textbook"],

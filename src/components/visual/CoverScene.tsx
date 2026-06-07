@@ -15,7 +15,6 @@ import { fadeUp, stagger } from "@/lib/motion"
 
 interface CoverSceneProps {
   totalSlides: number
-  totalMinutes: number
   teamCount: number
 }
 
@@ -58,10 +57,9 @@ const textbookFlow = [
   { label: "Phần 5", detail: "các lựa chọn tạo cơ sở vật chất" },
 ]
 
-export function CoverScene({ totalSlides, totalMinutes, teamCount }: CoverSceneProps) {
+export function CoverScene({ totalSlides, teamCount }: CoverSceneProps) {
   const metrics = [
     { value: totalSlides, label: "slide" },
-    { value: totalMinutes, label: "phút" },
     { value: teamCount, label: "thành viên" },
   ]
 

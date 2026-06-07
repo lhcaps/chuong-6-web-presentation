@@ -189,7 +189,6 @@ function HeroStage() {
   return (
     <CoverScene
       totalSlides={slides.length}
-      totalMinutes={minutes}
       teamCount={members.length}
     />
   )
